@@ -84,12 +84,23 @@ http.port: 9200
 ### Step 5 — Secure Access with Vultr Firewall Rules
 To improve security, I updated my **Vultr Firewall Group** so that only **my IP address** could connect to the server:
 
-- **Port 22 (SSH)** → Allowed from my IP only  
+- **Port 22 (SSH)** → Allowed from my IP only
+-  **Port 9200** → Elasticsearch  
 - All other ports → Blocked by default  
 
 This prevents unauthorized access while I continue configuring Elasticsearch and Kibana.
 
 📸 *Screenshot:*  
 ![Vultr Firewall Rules](./screenshots/vultr-firewall-rule.png)
+
+### Step 6 — Start & Enable Elasticsearch
+```bash
+systemctl daemon-reload
+systemctl enable elasticsearch.service
+systemctl start elasticsearch.service
+systemctl status elasticsearch.service
+```
+📸 *Screenshot:*  
+![Start & Enable Elasticsearch](./screenshots/elasticsearch-status.png)
 
 
