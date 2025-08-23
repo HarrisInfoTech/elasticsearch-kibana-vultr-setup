@@ -169,7 +169,7 @@ Vultr firewall (cloud):
 9200/tcp (Elasticsearch)
 ```
 📸 *Screenshot:*  
-![Vult Firewall](./screenshots/Vultr firewall.png)
+![Vult Firewall](./screenshots/Vultr-firewall.png)
 
 ```bash
 Ubuntu UFW (host):
@@ -177,7 +177,7 @@ ufw allow 5601
 (allow any connections to the 5601) 
 ```
 📸 *Screenshot:*  
-![Host Firewall](./screenshots/Host Firewall.png)
+![Host Firewall](./screenshots/Host-Firewall.png)
 
 Step 11 — Open Kibana and Complete Enrollment
 Open your browser and go to Kibana:
