@@ -112,3 +112,21 @@ dpkg -i kibana-8.x.x-amd64.deb
 📸 *Screenshot:*  
 ![Install Kibana](./screenshots/kibana-install-success.png)
 
+### Step 8 — Configure Kibana
+```bash
+nano /etc/kibana/kibana.yml
+
+
+Inside the config file, I made the following changes:
+
+Changed server.host to the public IP of my Vultr VM (removed the # to enable it)
+
+Removed the # before server.port: 5601 so it listens on the default port
+
+
+server.host: 144.*.*.*
+server.port: 5601
+
+📸 *Screenshot:*  
+![Configure Kibana](./screenshots/kibana-config.png)
+
