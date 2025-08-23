@@ -49,10 +49,11 @@ Before starting, make sure you have:
 
 ---
 
-### **Step 2 — Update the Server**
+### Step 2 — Update the Server
 ```bash
 sudo apt update && sudo apt upgrade -y
 
 📸 *Screenshot:*  
-![Server Update](./screenshots/server-update.png)
+![Server Updates](./screenshots/server-update.png)
+
 
