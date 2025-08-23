@@ -103,4 +103,12 @@ systemctl status elasticsearch.service
 📸 *Screenshot:*  
 ![Start & Enable Elasticsearch](./screenshots/elasticsearch-status.png)
 
+### Step 7 — Install Kibana
+```bash
+wget https://artifacts.elastic.co/downloads/kibana/kibana-8.x.x-amd64.deb
+dpkg -i kibana-8.x.x-amd64.deb
+```
+
+📸 *Screenshot:*  
+![Install Kibana](./screenshots/kibana-install-success.png)
 
