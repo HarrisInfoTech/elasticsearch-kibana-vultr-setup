@@ -55,3 +55,4 @@ sudo apt update && sudo apt upgrade -y
 
 📸 *Screenshot:*  
 ![Server Update](./screenshots/server-update.png)
+
