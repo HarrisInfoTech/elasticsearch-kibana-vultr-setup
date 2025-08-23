@@ -130,3 +130,12 @@ server.port: 5601
 📸 *Screenshot:*  
 ![Configure Kibana](./screenshots/kibana-config.png)
 
+### Step 9 — Start & Enable Kibana
+```bash
+systemctl daemon-reload
+systemctl enable kibana.service
+systemctl start kibana.service
+systemctl status kibana.service
+```
+📸 *Screenshot:*  
+![Start & Enable Kibana](./screenshots/kibana-status.png)
