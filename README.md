@@ -65,4 +65,19 @@ sudo dpkg -i elasticsearch-8.x.x-amd64.deb
 📸 *Screenshot:*  
 ![Install Elasticsearch](./screenshots/elasticsearch-install-success.png)
 
+Step 4 — Configure Elasticsearch
+```bash
+sudo nano /etc/elasticsearch/elasticsearch.yml
+```
+Inside the config file, I made the following changes:
+
+Changed network.host to my Elasticsearch server’s IP address (removed the # to enable it).
+
+Removed the # before http.port: 9200 to enable the HTTP port.
+
+network.host: 144.*.*.*
+http.port: 9200
+
+📸 *Screenshot:*  
+![Elasticsearch Config](./screenshots/elasticsearch-config.png)
 
