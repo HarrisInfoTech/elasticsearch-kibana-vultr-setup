@@ -139,3 +139,57 @@ systemctl status kibana.service
 ```
 📸 *Screenshot:*  
 ![Start & Enable Kibana](./screenshots/kibana-status.png)
+
+### **Step 10 — Generate Kibana Enrollment Token**
+To pair Kibana with Elasticsearch, generate a one-time enrollment token:
+
+```bash
+# Path may vary slightly by package/version; this is the common location
+cd /usr/share/elasticsearch/bin
+sudo ./elasticsearch-create-enrollment-token --scope kibana
+Copy the token shown in the terminal.
+```
+📸 *Screenshot:*  
+![Kibana Enrollment Token](./screenshots/Kibana-enrollment.png)
+
+Step 10 — Adjust Firewall (Cloud + Host)
+I needed to reach Kibana on port 5601 from my workstation.
+
+Vultr firewall (cloud):
+
+(Temporary) I allowed TCP from my IP to reach the server.
+
+(source = my IP only):
+
+22/tcp (SSH)
+
+5601/tcp (Kibana)
+
+9200/tcp (Elasticsearch)
+
+📸 *Screenshot:*  
+![Vult Firewall](./screenshots/Vultr firewall.png)
+
+
+Ubuntu UFW (host):
+ufw allow 5601
+(allow any connections to the 5601) 
+
+📸 *Screenshot:*  
+![Host Firewall](./screenshots/Host Firewall.png)
+
+Step 11 — Open Kibana and Complete Enrollment
+Open your browser and go to Kibana:
+
+pgsql
+Copy
+Edit
+http://<server-public-ip>:5601
+Paste the enrollment token from Step 9 when prompted.
+
+Complete the initial setup wizard.
+
+Log in (you’ll be guided to create or use the elastic superuser).
+
+📸 Screenshots:
+
