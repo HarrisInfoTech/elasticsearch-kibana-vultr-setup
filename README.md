@@ -126,7 +126,7 @@ Removed the # before server.port: 5601 so it listens on the default port
 
 server.host: 144.*.*.*
 server.port: 5601
-
+```
 📸 *Screenshot:*  
 ![Configure Kibana](./screenshots/kibana-config.png)
 
