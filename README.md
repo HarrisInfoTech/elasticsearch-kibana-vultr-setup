@@ -57,4 +57,12 @@ sudo apt update && sudo apt upgrade -y
 📸 *Screenshot:*  
 ![Server Updates](./screenshots/server-update.png)
 
+### Step 3 — Install Elasticsearch
+```bash
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.x.x-amd64.deb
+sudo dpkg -i elasticsearch-8.x.x-amd64.deb
+```
+📸 *Screenshot:*  
+![Install Elasticsearch](./screenshots/elasticsearch-install-success.png)
+
 
