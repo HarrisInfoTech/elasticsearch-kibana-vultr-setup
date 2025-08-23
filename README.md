@@ -152,7 +152,8 @@ Copy the token shown in the terminal.
 📸 *Screenshot:*  
 ![Kibana Enrollment Token](./screenshots/Kibana-enrollment.png)
 
-Step 10 — Adjust Firewall (Cloud + Host)
+### Step 11 — Adjust Firewall (Cloud + Host)
+```bash
 I needed to reach Kibana on port 5601 from my workstation.
 
 Vultr firewall (cloud):
@@ -166,15 +167,15 @@ Vultr firewall (cloud):
 5601/tcp (Kibana)
 
 9200/tcp (Elasticsearch)
-
+```
 📸 *Screenshot:*  
 ![Vult Firewall](./screenshots/Vultr firewall.png)
 
-
+```bash
 Ubuntu UFW (host):
 ufw allow 5601
 (allow any connections to the 5601) 
-
+```
 📸 *Screenshot:*  
 ![Host Firewall](./screenshots/Host Firewall.png)
 
