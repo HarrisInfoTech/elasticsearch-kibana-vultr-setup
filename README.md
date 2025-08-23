@@ -90,6 +90,6 @@ To improve security, I updated my **Vultr Firewall Group** so that only **my IP 
 This prevents unauthorized access while I continue configuring Elasticsearch and Kibana.
 
 📸 *Screenshot:*  
-![Vultr Firewall Rules](./screenshots/vultr-firewall-rules.png)
+![Vultr Firewall Rules](./screenshots/vultr-firewall-rule.png)
 
 
