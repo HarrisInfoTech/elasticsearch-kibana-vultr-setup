@@ -52,6 +52,7 @@ Before starting, make sure you have:
 ### Step 2 — Update the Server
 ```bash
 sudo apt update && sudo apt upgrade -y
+```
 
 📸 *Screenshot:*  
 ![Server Updates](./screenshots/server-update.png)
