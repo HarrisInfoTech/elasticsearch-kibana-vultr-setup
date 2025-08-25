@@ -238,27 +238,24 @@ To enable secure features like **alerting, actions, and session management**, I 
 ```bash
    cd /usr/share/kibana/bin
    ./kibana-encryption-keys generate
+```
+📸 *Screenshots:*  
+![Generate Encryption Keys](./screenshots/kibana-generate-keys.png)
 
-This outputs three keys under settings::
-
-xpack.encryptedSavedObjects.encryptionKey
-
-xpack.reporting.encryptionKey
-
-xpack.security.encryptionKey
+```bash
 
 Add keys to Kibana keystore one by one:
+```
 
-./kibana-keystore add xpack.encryptedSavedObjects.encryptionKey
-./kibana-keystore add xpack.reporting.encryptionKey
-./kibana-keystore add xpack.security.encryptionKey
+📸 *Screenshots:*  
+![Add Keys to Keystore](./screenshots/kibana-keystore-add.png) 
 
-
+```bash
 After each command, paste the generated key value when prompted.
 
 Restart Kibana to apply changes:
 
-sudo systemctl restart kibana
+systemctl restart kibana
 
 
 Log back into Kibana:
@@ -267,7 +264,8 @@ Go to Security → Alerts
 
 Verify no red flags/warnings appear (this confirms the keys are set correctly).
 ```
-📸 Screenshots:
+📸 *Screenshots:*  
+![Kibana Security Alerts](./screenshots/kibana-security-alerts.png)
 
 
 
