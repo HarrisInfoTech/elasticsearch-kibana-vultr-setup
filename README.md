@@ -230,3 +230,45 @@ Once authenticated, you’ll reach the Kibana dashboard.
 ![Kibana Dashboard](./screenshots/kibana-dashboard.png)
 
 
+### Step 12 — Configure Kibana Encryption Keys
+
+To enable secure features like **alerting, actions, and session management**, I generated and applied Kibana encryption keys.
+
+1. **SSH into the server** and generate encryption keys:
+   ```bash
+   cd /usr/share/kibana/bin
+   ./kibana-encryption-keys generate
+
+
+This outputs three keys under settings::
+
+xpack.encryptedSavedObjects.encryptionKey
+
+xpack.reporting.encryptionKey
+
+xpack.security.encryptionKey
+
+Add keys to Kibana keystore one by one:
+
+./kibana-keystore add xpack.encryptedSavedObjects.encryptionKey
+./kibana-keystore add xpack.reporting.encryptionKey
+./kibana-keystore add xpack.security.encryptionKey
+
+
+After each command, paste the generated key value when prompted.
+
+Restart Kibana to apply changes:
+
+sudo systemctl restart kibana
+
+
+Log back into Kibana:
+
+Go to Security → Alerts
+
+Verify no red flags/warnings appear (this confirms the keys are set correctly).
+```
+📸 Screenshots:
+
+
+
