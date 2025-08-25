@@ -238,8 +238,7 @@ To enable secure features like **alerting, actions, and session management**, I 
 ```bash
    cd /usr/share/kibana/bin
    ./kibana-encryption-keys generate
-```
-```bash
+
 This outputs three keys under settings::
 
 xpack.encryptedSavedObjects.encryptionKey
