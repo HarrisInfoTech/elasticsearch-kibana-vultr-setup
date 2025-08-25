@@ -186,7 +186,7 @@ pgsql
 Copy
 Edit
 http://<server-public-ip>:5601
-Paste the enrollment token from Step 9 when prompted.
+Paste the enrollment token from Step 10 when prompted.
 
 Complete the initial setup wizard.
 
