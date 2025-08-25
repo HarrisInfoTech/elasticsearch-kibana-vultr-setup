@@ -179,18 +179,42 @@ ufw allow 5601
 📸 *Screenshot:*  
 ![Host Firewall](./screenshots/Host-Firewall.png)
 
-Step 11 — Open Kibana and Complete Enrollment
+
+### Step 11 — Open Kibana and Complete Enrollment\
+```bash
 Open your browser and go to Kibana:
 
-pgsql
-Copy
-Edit
+
+
 http://<server-public-ip>:5601
-Paste the enrollment token from Step 10 when prompted.
 
-Complete the initial setup wizard.
 
-Log in (you’ll be guided to create or use the elastic superuser).
+1. **Paste the enrollment token** from Step 10 when prompted.  
 
-📸 Screenshots:
+2. Next, Kibana will request a **verification code**.  
+   Run the following command to generate it:
+   ```bash
+   /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+   /usr/share/elasticsearch/bin/kibana-verification-code
+
+
+Copy the code and paste it into the prompt.
+
+After verification, you’ll be prompted to log in.
+
+Username: elastic
+
+Password: This was provided during Elasticsearch installation under “Security auto-configuration information.”
+
+If you lost or forgot the password, reset it with:
+
+/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+
+Once authenticated, you’ll reach the Kibana dashboard.
+```
+📸 *Screenshots:*  
+![Kibana Enrollment Screen](./screenshots/kibana-enrollment-screen.png)  
+![Kibana Verification Code](./screenshots/kibana-verification-code.png)  
+![Kibana First Login](./screenshots/kibana-first-login.png)  
+![Kibana Dashboard](./screenshots/kibana-dashboard.png)
 
