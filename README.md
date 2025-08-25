@@ -190,14 +190,22 @@ http://<server-public-ip>:5601
 
 
 1. **Paste the enrollment token** from Step 10 when prompted.  
+ ```
 
+📸 *Screenshots:*  
+![Kibana Enrollment Screen](./screenshots/kibana-enrollment-screen.png)
+
+```bash
 2. Next, Kibana will request a **verification code**.  
    Run the following command to generate it:
-   ```bash
+  
    /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
    /usr/share/elasticsearch/bin/kibana-verification-code
+ ```
+📸 *Screenshots:*
+![Kibana Verification Code](./screenshots/kibana-verification-code.png)
 
-
+```bash
 Copy the code and paste it into the prompt.
 
 After verification, you’ll be prompted to log in.
@@ -209,12 +217,15 @@ Password: This was provided during Elasticsearch installation under “Security 
 If you lost or forgot the password, reset it with:
 
 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
-
-Once authenticated, you’ll reach the Kibana dashboard.
 ```
-📸 *Screenshots:*  
-![Kibana Enrollment Screen](./screenshots/kibana-enrollment-screen.png)  
-![Kibana Verification Code](./screenshots/kibana-verification-code.png)  
-![Kibana First Login](./screenshots/kibana-first-login.png)  
+📸 *Screenshots:*    
+
+```bash
+![Kibana First Login](./screenshots/kibana-first-login.png) 
+Once authenticated, you’ll reach the Kibana dashboard.
+
+📸 *Screenshots:*    
+  
 ![Kibana Dashboard](./screenshots/kibana-dashboard.png)
 
+```
