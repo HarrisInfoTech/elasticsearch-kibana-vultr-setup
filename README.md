@@ -235,11 +235,11 @@ Once authenticated, you’ll reach the Kibana dashboard.
 To enable secure features like **alerting, actions, and session management**, I generated and applied Kibana encryption keys.
 
 1. **SSH into the server** and generate encryption keys:
-   ```bash
+```bash
    cd /usr/share/kibana/bin
    ./kibana-encryption-keys generate
-
-
+```
+```bash
 This outputs three keys under settings::
 
 xpack.encryptedSavedObjects.encryptionKey
