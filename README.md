@@ -220,12 +220,13 @@ If you lost or forgot the password, reset it with:
 ```
 📸 *Screenshots:*    
 
-```bash
-![Kibana First Login](./screenshots/kibana-first-login.png) 
-Once authenticated, you’ll reach the Kibana dashboard.
+![Kibana First Login](./screenshots/kibana-first-login.png)
 
+```bash
+Once authenticated, you’ll reach the Kibana dashboard.
+```
 📸 *Screenshots:*    
   
 ![Kibana Dashboard](./screenshots/kibana-dashboard.png)
 
-```
+
