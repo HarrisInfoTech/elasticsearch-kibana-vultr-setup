@@ -115,7 +115,7 @@ dpkg -i kibana-8.x.x-amd64.deb
 ### Step 8 — Configure Kibana
 ```bash
 nano /etc/kibana/kibana.yml
-
+```
 
 Inside the config file, I made the following changes:
 
@@ -126,7 +126,7 @@ Removed the # before server.port: 5601 so it listens on the default port
 
 server.host: 144.*.*.*
 server.port: 5601
-```
+
 📸 *Screenshot:*  
 ![Configure Kibana](./screenshots/kibana-config.png)
 
@@ -143,17 +143,19 @@ systemctl status kibana.service
 ### **Step 10 — Generate Kibana Enrollment Token**
 To pair Kibana with Elasticsearch, generate a one-time enrollment token:
 
-```bash
+
 # Path may vary slightly by package/version; this is the common location
+```bash
 cd /usr/share/elasticsearch/bin
 sudo ./elasticsearch-create-enrollment-token --scope kibana
-Copy the token shown in the terminal.
 ```
+Copy the token shown in the terminal.
+
 📸 *Screenshot:*  
 ![Kibana Enrollment Token](./screenshots/Kibana-enrollment.png)
 
 ### Step 11 — Adjust Firewall (Cloud + Host)
-```bash
+
 I needed to reach Kibana on port 5601 from my workstation.
 
 Vultr firewall (cloud):
@@ -167,21 +169,23 @@ Vultr firewall (cloud):
 5601/tcp (Kibana)
 
 9200/tcp (Elasticsearch)
-```
+
 📸 *Screenshot:*  
 ![Vult Firewall](./screenshots/Vultr-firewall.png)
 
-```bash
+
 Ubuntu UFW (host):
+```bash
 ufw allow 5601
-(allow any connections to the 5601) 
 ```
+(allow any connections to the 5601) 
+
 📸 *Screenshot:*  
 ![Host Firewall](./screenshots/Host-Firewall.png)
 
 
 ### Step 11 — Open Kibana and Complete Enrollment\
-```bash
+
 Open your browser and go to Kibana:
 
 
@@ -190,22 +194,22 @@ http://<server-public-ip>:5601
 
 
 1. **Paste the enrollment token** from Step 10 when prompted.  
- ```
+ 
 
 📸 *Screenshots:*  
 ![Kibana Enrollment Screen](./screenshots/kibana-enrollment-screen.png)
 
-```bash
+
 2. Next, Kibana will request a **verification code**.  
    Run the following command to generate it:
-  
+```bash  
    /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
    /usr/share/elasticsearch/bin/kibana-verification-code
  ```
 📸 *Screenshots:*
 ![Kibana Verification Code](./screenshots/kibana-verification-code.png)
 
-```bash
+
 Copy the code and paste it into the prompt.
 
 After verification, you’ll be prompted to log in.
@@ -215,16 +219,16 @@ Username: elastic
 Password: This was provided during Elasticsearch installation under “Security auto-configuration information.”
 
 If you lost or forgot the password, reset it with:
-
+```bash
 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
 ```
 📸 *Screenshots:*    
 
 ![Kibana First Login](./screenshots/kibana-first-login.png)
 
-```bash
+
 Once authenticated, you’ll reach the Kibana dashboard.
-```
+
 📸 *Screenshots:*    
   
 ![Kibana Dashboard](./screenshots/kibana-dashboard.png)
@@ -242,28 +246,28 @@ To enable secure features like **alerting, actions, and session management**, I 
 📸 *Screenshots:*  
 ![Generate Encryption Keys](./screenshots/kibana-generate-keys.png)
 
-```bash
+
 
 Add keys to Kibana keystore one by one:
-```
+
 
 📸 *Screenshots:*  
 ![Add Keys to Keystore](./screenshots/kibana-keystore-add.png) 
 
-```bash
+
 After each command, paste the generated key value when prompted.
 
 Restart Kibana to apply changes:
-
+```bash
 systemctl restart kibana
-
+```
 
 Log back into Kibana:
 
 Go to Security → Alerts
 
 Verify no red flags/warnings appear (this confirms the keys are set correctly).
-```
+
 📸 *Screenshots:*  
 ![Kibana Security Alerts](./screenshots/kibana-security-alerts.png)
 
